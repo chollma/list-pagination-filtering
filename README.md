@@ -1,5 +1,6 @@
 # techdegree-project-2
-## List Pagination and Filtering
+
+List Pagination and Filtering
 
 A dynamically created HTML document that allows a user to navigate with pagination through a list of students.
 
