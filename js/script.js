@@ -16,9 +16,8 @@ FSJS project 2 - List Filter and Pagination
    will only be used inside of a function, then it can be locally 
    scoped to that function.
 ***/
-
-
-
+const listItems = '';
+const pageNumber = '';
 
 /*** 
    Create the `showPage` function to hide all of the items in the 
@@ -35,6 +34,11 @@ FSJS project 2 - List Filter and Pagination
        "invoke" the function 
 ***/
 
+showPage () {
+
+
+
+}
 
 
 
@@ -43,6 +47,10 @@ FSJS project 2 - List Filter and Pagination
    functionality to the pagination buttons.
 ***/
 
+appendPageLinks () {
+
+
+}
 
 
 
