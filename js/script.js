@@ -33,26 +33,21 @@ const numOfItems = 10;
        "invoke" the function 
 ***/
 
-function showPage (listItems,page) {
+function showPage (listItems , page) {
 const startIndex = (page * numOfItems) - numOfItems;
 const endIndex = page * numOfItems;
 for (let i = 0; i < listItems.length; i ++) {
   if (i >= startIndex &&  i < endIndex ) {
-    console.log('true');
-  } else {
-      console.log('false');
-      
-
+    break;
+} else {
+    listItems[i].style.display = 'none';
   }
 
 }
 
-showPage(listItems, 1);
-
-
 }
 
-
+showPage(listItems, 1);
 
 /*** 
    Create the `appendPageLinks function` to generate, append, and add 
