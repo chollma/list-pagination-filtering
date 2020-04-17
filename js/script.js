@@ -38,7 +38,7 @@ const startIndex = (page * numOfItems) - numOfItems;
 const endIndex = page * numOfItems;
 for (let i = 0; i < listItems.length; i ++) {
   if (i >= startIndex &&  i < endIndex ) {
-    break;
+   listItems[i].style.display = 'block';
 } else {
     listItems[i].style.display = 'none';
   }
@@ -46,8 +46,6 @@ for (let i = 0; i < listItems.length; i ++) {
 }
 
 }
-
-showPage(listItems, 1);
 
 /*** 
    Create the `appendPageLinks function` to generate, append, and add 
