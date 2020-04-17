@@ -5,7 +5,6 @@ FSJS project 2 - List Filter and Pagination
    
 // Study guide for this project - https://drive.google.com/file/d/1OD1diUsTMdpfMDv677TfL1xO2CEkykSz/view?usp=sharing
 
-
 /*** 
    Add your global variables that store the DOM elements you will 
    need to reference and/or manipulate. 
@@ -34,13 +33,21 @@ const numOfItems = 10;
        "invoke" the function 
 ***/
 
-function showPage (listItems,numOfItems) {
-//const startIndex = 0;
-//const endIndex = 0;
-//for (let i = 0; i < listItems.length; i ++;) {
-  
+function showPage (listItems,page) {
+const startIndex = (page * numOfItems) - numOfItems;
+const endIndex = page * numOfItems;
+for (let i = 0; i < listItems.length; i ++;) {
+  if (i >= startIndex &&  i < endIndex ) {
+    console.log('true');
+  } else {
+      console.log('false');
+      )
 
-//}
+  }
+
+}
+
+showPage(listItems, 1);
 
 
 }
