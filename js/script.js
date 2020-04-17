@@ -34,7 +34,7 @@ const numOfItems = 10;
        "invoke" the function 
 ***/
 
-showPage (listItems,numOfItems) {
+function showPage (listItems,numOfItems) {
 //const startIndex = 0;
 //const endIndex = 0;
 //for (let i = 0; i < listItems.length; i ++;) {
@@ -52,7 +52,7 @@ showPage (listItems,numOfItems) {
    functionality to the pagination buttons.
 ***/
 
-appendPageLinks () {
+function appendPageLinks () {
 
 
 }
