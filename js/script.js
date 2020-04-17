@@ -34,8 +34,13 @@ const numOfItems = 10;
        "invoke" the function 
 ***/
 
-showPage () {
+showPage (listItems,numOfItems) {
+const startIndex = 0;
+const endIndex = 0;
+for (let i = 0; i < listItems.length; i ++;) {
+  
 
+}
 
 
 }
