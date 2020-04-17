@@ -36,12 +36,12 @@ const numOfItems = 10;
 function showPage (listItems,page) {
 const startIndex = (page * numOfItems) - numOfItems;
 const endIndex = page * numOfItems;
-for (let i = 0; i < listItems.length; i ++;) {
+for (let i = 0; i < listItems.length; i ++) {
   if (i >= startIndex &&  i < endIndex ) {
     console.log('true');
   } else {
       console.log('false');
-      )
+      
 
   }
 
