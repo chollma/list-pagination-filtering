@@ -35,12 +35,12 @@ const numOfItems = 10;
 ***/
 
 showPage (listItems,numOfItems) {
-const startIndex = 0;
-const endIndex = 0;
-for (let i = 0; i < listItems.length; i ++;) {
+//const startIndex = 0;
+//const endIndex = 0;
+//for (let i = 0; i < listItems.length; i ++;) {
   
 
-}
+//}
 
 
 }
