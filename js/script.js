@@ -27,12 +27,15 @@ function showPage(listItems, page) {
 function appendPageLinks(listItems) {
     let pageDiv = document.getElementsByClassName('page');
     let paginationDiv = document.createElement('div');
-
-
-    /* Create div container for pagination */
-    /* Give that div a class of 'pagination' */
-    /* Create ul to hold pagination list */
-    /* Create li x5 for the pagination links */
-    /* Create links inside of each of the list items with a number representing the page */
+    let paginationUl = document.createElement('ul');
+    let paginationLi = document.createElement('li');
+    let paginationA = document.createElement('a');
+    paginationA.setAttribute('href', '#');
+    paginationA.innerHTML = '1';
+    paginationDiv.className = "pagination";
+    paginationDiv.appendChild(paginationUl);
+    paginationUl.appendChild(paginationLi);
+    paginationLi.appendChild(paginationA);
+    pageDiv[0].appendChild(paginationDiv);
 
 }
