@@ -26,16 +26,28 @@ function showPage(listItems, page) {
 /* Pagination Function */
 function appendPageLinks(listItems) {
     let pageDiv = document.getElementsByClassName('page');
+    /* Determine how many pages are needed for the list by dividing the
+total number of list items by the max number of items per page */
+
+    /* Create a div, give it a pagination class, and append it to the page div */
     let paginationDiv = document.createElement('div');
-    let paginationUl = document.createElement('ul');
-    let paginationLi = document.createElement('li');
-    let paginationA = document.createElement('a');
-    paginationA.setAttribute('href', '#');
-    paginationA.innerHTML = '1';
     paginationDiv.className = "pagination";
-    paginationDiv.appendChild(paginationUl);
-    paginationUl.appendChild(paginationLi);
-    paginationLi.appendChild(paginationA);
     pageDiv[0].appendChild(paginationDiv);
+
+    /* Add a ul to the pagination div to store the pagination links */
+    let paginationUl = document.createElement('ul');
+    paginationDiv.appendChild(paginationUl);
+
+    /* For every page, add li and a tags with the page number text */
+    for (let i = 1; i < (listItems.length) / numOfItems; i++) {
+        let paginationLi = document.createElement('li');
+        let paginationA = document.createElement('a');
+        paginationA.setAttribute('href', '#');
+        paginationA.innerHTML = i;
+        paginationA.className = "active";
+        paginationUl.appendChild(paginationLi);
+        paginationLi.appendChild(paginationA);
+
+    }
 
 }
