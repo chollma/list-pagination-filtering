@@ -38,16 +38,25 @@ total number of list items by the max number of items per page */
     let paginationUl = document.createElement('ul');
     paginationDiv.appendChild(paginationUl);
 
+    function myFunction() {
+        console.log("hello world");
+    }
+
     /* For every page, add li and a tags with the page number text */
     for (let i = 1; i < (listItems.length) / numOfItems; i++) {
         let paginationLi = document.createElement('li');
         let paginationA = document.createElement('a');
+
         paginationA.setAttribute('href', '#');
         paginationA.innerHTML = i;
-        paginationA.className = "active";
+        paginationA.addEventListener("click", myFunction);
         paginationUl.appendChild(paginationLi);
         paginationLi.appendChild(paginationA);
-
+        if (i == 1) {
+            paginationA.className = "active";
+        }
     }
+
+
 
 }
