@@ -1,14 +1,13 @@
 /******************************************
-Treehouse Techdegree:
-FSJS project 2 - List Filter and Pagination
+Student: Cooper Hollmaier
+Project: Techdegree - Unit 2
+Intended Behavior: List Filter and Pagination
+Goal: Exceeds Expecatations
 ******************************************/
-
-// Study guide for this project - https://drive.google.com/file/d/1OD1diUsTMdpfMDv677TfL1xO2CEkykSz/view?usp=sharing
 
 /* Global Variables */
 const listItems = document.getElementsByTagName('li');
 const numOfItems = 10;
-
 
 /* Sort Function */
 function showPage(listItems, page) {
@@ -23,30 +22,31 @@ function showPage(listItems, page) {
     }
 }
 
-/* Pagination Function */
-function appendPageLinks(listItems) {
-    let pageDiv = document.getElementsByClassName('page');
-    let paginationDiv = document.createElement('div');
-    paginationDiv.className = "pagination";
-    pageDiv[0].appendChild(paginationDiv);
 
-    let paginationUl = document.createElement('ul');
-    paginationDiv.appendChild(paginationUl);
+/* Pagination Function */
+function addPagination(listItems) {
+    let pageDiv = document.getElementsByClassName('page');
+    let newDiv = document.createElement('div');
+    pageDiv[0].appendChild(newDiv);
+    newDiv.className = "pagination";
+    let newUl = document.createElement('ul');
+    newDiv.appendChild(newUl);
 
     for (let i = 1; i < (listItems.length) / numOfItems; i++) {
-        let paginationLi = document.createElement('li');
-        let paginationA = document.createElement('a');
-        paginationA.setAttribute('href', '#');
-        paginationA.innerHTML = i;
-        paginationUl.appendChild(paginationLi);
-        paginationLi.appendChild(paginationA);
-        if (i == 1) {
-            paginationA.className = "active";
-        } else {
-            paginationA.className = "inactive";
-        }
-
-
-
+        let newLi = document.createElement('li');
+        newUl.appendChild(newLi);
+        let pageLink = document.createElement('a');
+        newLi.appendChild(pageLink);
+        pageLink.setAttribute('href', '#');
+        pageLink.innerHTML = i;
+        pageLink.addEventListener('click', (e) => {
+            let otherLinks = document.querySelectorAll('a');
+            pageLink.className = "active";
+        })
     }
 }
+window.addEventListener('load', (e) => {
+    console.log('Page loaded');
+    addPagination(listItems);
+
+})
