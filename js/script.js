@@ -13,7 +13,7 @@ const div = document.createElement('div');
 const container = document.getElementsByClassName('page');
 
 
-/* Sort Function */
+/* Display the list with the given constraints */
 function showPage(list, page) {
     const startIndex = (page * count) - count;
     const endIndex = page * count;
@@ -26,9 +26,7 @@ function showPage(list, page) {
     }
 }
 
-
-
-/* Pagination Function */
+/* Dynamically add pagination links to bottom of the page */
 function addPagination(list) {
     container[0].appendChild(div);
     div.className = "pagination";
@@ -49,11 +47,13 @@ function addPagination(list) {
         ul.addEventListener('click', (e) => {
             if (e.target.tagName = 'A') {
                 for (let i = 0; i < links.length; i++) {
-                    links[i].className = 'inactive';
+                    links[i].className = '';
                 }
+                e.target.className = "active";
+                showPage(list, e.target.innerHTML);
             }
-            e.target.className = "active";
-            showPage(list, e.target.innerHTML);
+
+
         });
     }
     let first = document.querySelector('a');
