@@ -6,47 +6,60 @@ Goal: Exceeds Expecatations
 ******************************************/
 
 /* Global Variables */
-const listItems = document.getElementsByTagName('li');
-const numOfItems = 10;
+const list = document.getElementsByTagName('li');
+const displayList = document.getElementsByClassName('student-item cf');
+const count = 10;
+const div = document.createElement('div');
+const container = document.getElementsByClassName('page');
+
 
 /* Sort Function */
-function showPage(listItems, page) {
-    const startIndex = (page * numOfItems) - numOfItems;
-    const endIndex = page * numOfItems;
-    for (let i = 0; i < listItems.length; i++) {
+function showPage(list, page) {
+    const startIndex = (page * count) - count;
+    const endIndex = page * count;
+    for (let i = 0; i < list.length; i++) {
         if (i >= startIndex && i < endIndex) {
-            listItems[i].style.display = 'block';
+            list[i].style.display = 'block';
         } else {
-            listItems[i].style.display = 'none';
+            list[i].style.display = 'none';
         }
     }
 }
 
 
+
 /* Pagination Function */
-function addPagination(listItems) {
-    let pageDiv = document.getElementsByClassName('page');
-    let newDiv = document.createElement('div');
-    pageDiv[0].appendChild(newDiv);
-    newDiv.className = "pagination";
-    let newUl = document.createElement('ul');
-    newDiv.appendChild(newUl);
+function addPagination(list) {
+    container[0].appendChild(div);
+    div.className = "pagination";
+    let ul = document.createElement('ul');
+    div.appendChild(ul);
 
-    for (let i = 1; i < (listItems.length) / numOfItems; i++) {
-        let newLi = document.createElement('li');
-        newUl.appendChild(newLi);
-        let pageLink = document.createElement('a');
-        newLi.appendChild(pageLink);
-        pageLink.setAttribute('href', '#');
-        pageLink.innerHTML = i;
-        pageLink.addEventListener('click', (e) => {
-            let otherLinks = document.querySelectorAll('a');
-            pageLink.className = "active";
-        })
+    for (let i = 1; i < (list.length) / count; i++) {
+        let li = document.createElement('li');
+        ul.appendChild(li);
+        let a = document.createElement('a');
+        li.appendChild(a);
+        a.setAttribute('href', '#');
+        a.innerHTML = i;
+        let links = ul.querySelectorAll('a');
+        ul.addEventListener('click', (e) => {
+            if (e.target.tagName = 'A') {
+                for (let i = 0; i < links.length; i++) {
+                    links[i].className = 'inactive';
+                }
+            }
+            e.target.className = "active";
+            showPage(list, e.target.innerHTML);
+        });
     }
-}
-window.addEventListener('load', (e) => {
-    console.log('Page loaded');
-    addPagination(listItems);
 
-})
+
+    let first = document.querySelector('a');
+    first.className = "active";
+
+
+}
+
+showPage(list, 1);
+addPagination(displayList);
