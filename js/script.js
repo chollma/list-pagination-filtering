@@ -7,7 +7,7 @@ Goal: Exceeds Expecatations
 
 /* Global Variables */
 const list = document.getElementsByTagName('li');
-const displayList = document.getElementsByClassName('student-item cf');
+const display = document.getElementsByClassName('student-item cf');
 const count = 10;
 const div = document.createElement('div');
 const container = document.getElementsByClassName('page');
@@ -37,12 +37,15 @@ function addPagination(list) {
 
     for (let i = 1; i < (list.length) / count; i++) {
         let li = document.createElement('li');
-        ul.appendChild(li);
         let a = document.createElement('a');
+        let links = ul.querySelectorAll('a');
+
+        ul.appendChild(li);
         li.appendChild(a);
         a.setAttribute('href', '#');
         a.innerHTML = i;
-        let links = ul.querySelectorAll('a');
+
+
         ul.addEventListener('click', (e) => {
             if (e.target.tagName = 'A') {
                 for (let i = 0; i < links.length; i++) {
@@ -53,13 +56,10 @@ function addPagination(list) {
             showPage(list, e.target.innerHTML);
         });
     }
-
-
     let first = document.querySelector('a');
     first.className = "active";
-
 
 }
 
 showPage(list, 1);
-addPagination(displayList);
+addPagination(display);
