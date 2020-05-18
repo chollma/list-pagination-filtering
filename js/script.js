@@ -36,12 +36,11 @@ function addPagination(list) {
     for (let i = 1; i < (list.length) / count; i++) {
         let li = document.createElement('li');
         let a = document.createElement('a');
-        let links = ul.querySelectorAll('a');
-
         ul.appendChild(li);
         li.appendChild(a);
         a.setAttribute('href', '#');
         a.innerHTML = i;
+        let links = ul.querySelectorAll('a');
 
 
         ul.addEventListener('click', (e) => {
