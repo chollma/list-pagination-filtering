@@ -23,6 +23,10 @@ searchDiv.childNodes[5].appendChild(document.createElement('button'));
 searchDiv.childNodes[5].childNodes[1].textContent = 'Search';
 searchDiv.childNodes[5].appendChild(document.createComment('End search'));
 
+/* Enable search features */
+
+
+
 /* Display the list with the given constraints */
 function showPage(list, page) {
     const startIndex = (page * count) - count;
