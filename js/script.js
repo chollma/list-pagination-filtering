@@ -12,6 +12,16 @@ const count = 10;
 const div = document.createElement('div');
 const container = document.getElementsByClassName('page');
 
+/* Create search box HTML */
+let allDivs = document.getElementsByTagName('div');
+let searchDiv = allDivs[1];
+searchDiv.appendChild(document.createElement('div'));
+searchDiv.childNodes[5].className = "student-search";
+searchDiv.childNodes[5].appendChild(document.createElement('input'));
+searchDiv.childNodes[5].childNodes[0].placeholder = 'Search for students...';
+searchDiv.childNodes[5].appendChild(document.createElement('button'));
+searchDiv.childNodes[5].childNodes[1].textContent = 'Search';
+searchDiv.childNodes[5].appendChild(document.createComment('End search'));
 
 /* Display the list with the given constraints */
 function showPage(list, page) {
@@ -59,6 +69,8 @@ function addPagination(list) {
     first.className = "active";
 
 }
+
+
 
 showPage(list, 1);
 addPagination(display);
