@@ -11,7 +11,7 @@ const count = 10;
 const div = document.createElement('div');
 const container = document.getElementsByClassName('page');
 
-/* Display the list with the given constraints */
+/* Display the supplied list with the given constraints on page size */
 function showPage(list, page) {
     const startIndex = (page * count) - count;
     const endIndex = page * count;
@@ -23,8 +23,7 @@ function showPage(list, page) {
         }
     }
 }
-
-/* Dynamically add pagination links to bottom of the page */
+/* Dynamically add pagination links based on record count to bottom of the page */
 function addPagination(list) {
     container[0].appendChild(div);
     div.className = "pagination";
