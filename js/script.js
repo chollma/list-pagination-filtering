@@ -2,30 +2,14 @@
 Student: Cooper Hollmaier
 Project: Techdegree - Unit 2
 Intended Behavior: List Filter and Pagination
-Goal: Exceeds Expecatations
+Goal: Meets Expecatations
 ******************************************/
-
 /* Global Variables */
 const list = document.getElementsByTagName('li');
 const display = document.getElementsByClassName('student-item cf');
 const count = 10;
 const div = document.createElement('div');
 const container = document.getElementsByClassName('page');
-
-/* Create search box HTML */
-let allDivs = document.getElementsByTagName('div');
-let searchDiv = allDivs[1];
-searchDiv.appendChild(document.createElement('div'));
-searchDiv.childNodes[5].className = "student-search";
-searchDiv.childNodes[5].appendChild(document.createElement('input'));
-searchDiv.childNodes[5].childNodes[0].placeholder = 'Search for students...';
-searchDiv.childNodes[5].appendChild(document.createElement('button'));
-searchDiv.childNodes[5].childNodes[1].textContent = 'Search';
-searchDiv.childNodes[5].appendChild(document.createComment('End search'));
-
-/* Enable search features */
-
-
 
 /* Display the list with the given constraints */
 function showPage(list, page) {
@@ -47,13 +31,13 @@ function addPagination(list) {
     let ul = document.createElement('ul');
     div.appendChild(ul);
 
-    for (let i = 1; i < (list.length) / count; i++) {
+    for (let i = 0; i < (list.length) / count; i++) {
         let li = document.createElement('li');
         let a = document.createElement('a');
         ul.appendChild(li);
         li.appendChild(a);
         a.setAttribute('href', '#');
-        a.innerHTML = i;
+        a.innerHTML = i + 1;
         let links = ul.querySelectorAll('a');
 
 
@@ -73,8 +57,6 @@ function addPagination(list) {
     first.className = "active";
 
 }
-
-
 
 showPage(list, 1);
 addPagination(display);
