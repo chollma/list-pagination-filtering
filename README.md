@@ -6,3 +6,8 @@ I built this project as part of my Fullstack JavaScript Techdegree provided by T
   
 ## Running the Project
 To see the project in action, clone this repository to your desktop and open index.html in a browser. The script should automatically run and display the first 10 list items with the appropriate pagination links on the bottom of the page.
+
+## Credits
+
+Inspired by [Team Treehouse](https://teamtreehouse.com/)
+Built by Cooper Hollmaier [GitHub](https://github.com/chollma) [Twitter](https://twitter.com/cooperhollmaier) [Website] (https://cooperhollmaier.com)
