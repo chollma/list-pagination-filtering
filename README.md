@@ -1,5 +1,5 @@
-# techdegree-project-2
-
+# Unit 2 - List Pagination & Filtering
+> A JavaScript application that dynamically appends an unordered list with links for pagination.
 List Pagination and Filtering
 
 A dynamically created HTML document that allows a user to navigate with pagination through a list of students.
