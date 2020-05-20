@@ -10,4 +10,7 @@ To see the project in action, clone this repository to your desktop and open ind
 ## Credits
 
 Inspired by [Team Treehouse](https://teamtreehouse.com/)
-Built by Cooper Hollmaier [GitHub](https://github.com/chollma) [Twitter](https://twitter.com/cooperhollmaier) [Website] (https://cooperhollmaier.com)
+Built by Cooper Hollmaier 
+[GitHub](https://github.com/chollma) 
+[Twitter](https://twitter.com/cooperhollmaier) 
+[Website](https://cooperhollmaier.com)
